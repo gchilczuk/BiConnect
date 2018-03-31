@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    build:
+      dockerfile: backend.Dockerfile
+      context: .
+    container_name: biconnect_backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./BiConnectBE:/code/
+    depends_on:
+      - database
+    network_mode: host
+
+  frontend:
+    image: node:latest
+    container_name: biconnect_frontend
+    volumes:
+      - ./BiConnectFE:/code/
+    working_dir: /code
+    entrypoint: bash -c "npm install && npm run dev"
+    network_mode: host
+
+  database:
+    image: postgres
+    container_name: biconnect_database
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_USER: devDB
+    network_mode: host

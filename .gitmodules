@@ -1,0 +1,6 @@
+[submodule "BiConnectBE"]
+	path = BiConnectBE
+	url = git@github.com:gchilczuk/BiConnectBE.git
+[submodule "BiConnectFE"]
+	path = BiConnectFE
+	url = git@github.com:gchilczuk/BiConnectFE.git
