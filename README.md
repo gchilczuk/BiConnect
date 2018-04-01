@@ -1,28 +1,26 @@
 # Co to jest?
 Ten projekt to połączeniu projektów BiConnectFE oraz BiConnectBE, tak aby dało się uruchomić oba jednym poleceniem.
 
-Frontend i Backend wciąż są oddzielnymi projektami z oddzielnymi repozytoriami. Tutaj są umieszczone jedynie odnośniki do nich.
+Frontend i Backend wciąż są oddzielnymi projektami z oddzielnymi repozytoriami, musisz je ręcznie umieścić w katalogu BiConnect.
+Struktrua katalogów powinna wyglądać tak:
 
-Możesz spokojnie pracować nad projektami tutaj, ale aby zacommitować jakieś zmiany do tamtych repozytoriów musisz być w odpowiednim katalogu.
+```text
+.
+├── BiConnect
+│   ├── BiConnectBE
+│   ├── BiConnectFE
+│   ├── .gitignore
+│   ├── backend.Dockerfile
+│   ├── BiCon_create.sql
+│   ├── docker-compose.yml
+│   └── README.md
+```
+ 
+Po uruchomieniu kontenerów zmiany jakich dokonasz powinny wywołać automatyczne przebudowanie serwera i po chwili powinny być widoczne w przeglądarce.
 
-Zmiany jakich dokonasz powinny wywołać automatyczne przebudowanie serwera i po chwili powinny być widoczne w przeglądarce.
-
-Jeżeli po twoich zmianach serwer się przewrócił to niekiedy będzie potrzebne zrestartowanie dockera.
+Jeżeli po twoich zmianach serwer się „przewrócił” to niekiedy będzie potrzebne zrestartowanie dockera.
 
 # How to
-#### clone repo
-Jeżeli używasz SSH:
-```bash
-git clone --recurse-submodules git@github.com:gchilczuk/BiConnect.git
-
-```
-
-Jeżeli używasz HTTPS spróbuj:
-```bash
-git clone --recurse-submodules https://github.com/gchilczuk/BiConnect.git
-```
-…ale to może nie zadziałać. W przypdku problemów z submodułami skontaktuj się ze mną [Grzesiek], a zmienię submoduły z ssh na https (ewentualnie DIY, to prawdopodobnie tylko podmiana linków w pliku .gitmodules, ale poczytaj na wszelki wypadek o submodułach: https://git-scm.com/book/en/v2/Git-Tools-Submodules).
-
 #### run dev
 Musisz mieć zainstalowane 
 * Docker
