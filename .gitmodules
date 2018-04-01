@@ -1,6 +1,0 @@
-[submodule "BiConnectBE"]
-	path = BiConnectBE
-	url = https://github.com/gchilczuk/BiConnectBE.git
-[submodule "BiConnectFE"]
-	path = BiConnectFE
-	url = https://github.com/gchilczuk/BiConnectFE.git
