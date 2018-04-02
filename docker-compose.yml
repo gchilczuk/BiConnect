@@ -5,7 +5,7 @@ services:
       dockerfile: backend.Dockerfile
       context: .
     container_name: biconnect_backend
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver
     volumes:
       - ./BiConnectBE:/code/
     depends_on:
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./BiConnectFE:/code/
     working_dir: /code
-    entrypoint: bash -c "npm install && npm run dev"
+    entrypoint: bash -c "yarn install && yarn run dev"
     network_mode: host
 
   database:
