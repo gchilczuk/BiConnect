@@ -5,16 +5,24 @@ services:
       dockerfile: backend.Dockerfile
       context: .
     container_name: biconnect_backend
-    command: python manage.py runserver
+    ports:
+      - 8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./BiConnectBE:/code/
     depends_on:
       - database
     network_mode: host
+    environment:
+      EMAIL_HOST: host_like_smtp.gmail.com
+      EMAIL_HOST_USER: email_address@domaain.com
+      EMAIL_HOST_PASSWORD: email_password
 
   frontend:
     image: node:latest
     container_name: biconnect_frontend
+    ports:
+      - 3000
     volumes:
       - ./BiConnectFE:/code/
     working_dir: /code
